@@ -1,0 +1,33 @@
+
+<!--  -->
+
+<app-nav></app-nav>
+<body>
+    
+    <div class="container">
+        <div class="title">TPO Login</div>
+        <div class="backend_message">
+            <h3>{{Showmsg}}</h3>
+        </div>
+        <div class="content">
+            <form (ngSubmit)="onSubmit()">
+                <div class="user-details">
+
+                    <div class="input-box">
+                        <span class="details">User Id</span>
+                        <input type="string" name="email" placeholder="Enter your user id" [(ngModel)]="tpologinid" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Password</span>
+                        <input type="password" name="password" placeholder="Enter your password" [(ngModel)]="tpopassword" required>
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="submit" value="Login">
+                </div>
+                
+            </form>
+        </div>
+    </div>
+
+</body>

@@ -1,0 +1,56 @@
+<app-studentnav></app-studentnav>
+<body>
+    <div class="container">
+        <div class="title">Search Placed Students</div>
+        <div class="backend_message">
+            <h3>{{Showmsg}}</h3>
+        </div>
+        <div class="content">
+            <form #userform="ngForm" (ngSubmit)="onSubmit(userform)">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Department</span>
+                        <select name="department" [(ngModel)]="dataobj.department">
+                            <option value="" disabled selected>Please select your department</option>
+                            <option value="CSE">CSE</option>
+                            <option value="IT">IT</option>
+                            <option value="ME">ME</option>
+                            <option value="CE">CE</option>
+                            <option value="EE">EE</option>
+                            <option value="EEE">EEE</option>
+                            <option value="ET">ET</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="submit" value="VIEW">
+                </div>
+            </form>
+        </div>
+        <div class="table" *ngIf="showtable">
+            <table id="student-details">
+                <thead>
+                    <tr>
+                        <th>NAME</th>
+                        <th>REGD. NO.</th>
+                        <th>DEPARTMENT</th>
+                        <th>COMPANY ID</th>
+                        <th>COMPANY NAME</th>
+                        <th>ACADEMIC YEAR</th>
+                    </tr>
+                </thead>
+    
+                <tr *ngFor="let dataobj of placedstudentsarr">
+                    <td>{{dataobj.student_name}}</td>
+                    <td>{{dataobj.registration_number}}</td>
+                    <td>{{dataobj.department}}</td>
+                    <td>{{dataobj.company_id}}</td>
+                    <td>{{dataobj.company_name}}</td>
+                    <td>{{dataobj.academic_year}}</td>
+    
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+</body>

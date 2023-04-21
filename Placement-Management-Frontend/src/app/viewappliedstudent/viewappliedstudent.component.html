@@ -1,0 +1,74 @@
+<app-tponav></app-tponav>
+
+<body>
+    <div class="container">
+        <div class="title">SEARCH APPLIED STUDENT</div>
+        <div class="backend_message">
+            <h3>{{showmsg}}</h3>
+        </div>
+        <div class="content">
+            <form #userform="ngForm" (ngSubmit)="onSubmit(userform)">
+                <br>
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Department</span>
+                        <select name="department" [(ngModel)]="dataobj.department">
+                            <option value="" disabled selected>Please select your department</option>
+                            <option value="CSE">CSE</option>
+                            <option value="IT">IT</option>
+                            <option value="ME">ME</option>
+                            <option value="CE">CE</option>
+                            <option value="EE">EE</option>
+                            <option value="EEE">EEE</option>
+                            <option value="ET">ET</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="button-container">
+                    <div class="button">
+                        <input type="submit" value="SEARCH">
+                    </div>
+                    <form #viewallform="ngForm" (ngSubmit)="onSubmitViewall(viewallform)">
+                        <div class="button">
+                            <input type="submit" value="VIEW ALL">
+                        </div>
+                    </form>
+                </div>
+
+            </form>
+
+
+            <!-- table -->
+        </div>
+        <div class="table" *ngIf="showtable">
+            <table border="1" id="student-details">
+                <thead>
+                    <tr>
+                        <th>SL No.</th>
+                        <th>NAME</th>
+                        <th>REGD. NO.</th>
+                        <th>EMAIL</th>
+                        <th>DEPARTMENT</th>
+                        <th>COMPANY NAME</th>
+                        <th>COMPANY ID</th>
+                    </tr>
+                </thead>
+
+                <tr *ngFor="let dataobj of appliedstudentsarr">
+                    <td>{{dataobj.slno}}</td>
+                    <td>{{dataobj.name}}</td>
+                    <td>{{dataobj.registration_number}}</td>
+                    <td>{{dataobj.email}}</td>
+                    <td>{{dataobj.department}}</td>
+                    <td>{{dataobj.company_name}}</td>
+                    <td>{{dataobj.company_id}}</td>
+
+
+
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+</body>

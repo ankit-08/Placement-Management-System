@@ -1,0 +1,130 @@
+*{
+  text-decoration: none;
+  list-style: none;
+}
+.navbar {
+  height: 50px;
+  width: 100%;
+  background-color: transparent;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+}
+.navbar .nav-menu {
+  width:100%;
+  height: 50px;
+  margin-left: 20%;
+  margin-right: 20%;
+  display: inherit;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  background-color: rgba(255, 255, 255, 0.438);
+}
+.navbar .nav-menu a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:max-content;
+  height:30px; 
+  margin: 5px 15px 5px 15px; 
+  padding: 0 10px 0 10px;
+  border-color: transparent;
+  border-radius: 20px;
+  color: #1b1919;
+  font-weight: bold;
+  
+}
+
+.navbar .nav-menu a:hover{
+  background-color: hsla(0, 0%, 100%, 0.571);
+    
+}
+
+#nav-toggle {
+  display: none;
+  position: absolute;
+  top: -100px;
+}
+
+.navbar .icon-burger {
+  display: none;
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.navbar .icon-burger .line {
+  width: 30px;
+  height: 5px;
+  background-color:  rgba(255, 255, 255, 0.438);
+  margin: 5px;
+  border-radius: 3px;
+  transition: all .3s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    background-color: transparent;
+
+  }
+
+  .navbar .nav-menu {
+    float: none;
+    position: fixed;
+    z-index: 13;
+    left: 0;
+    right: 0;
+    top: 100px;
+    bottom: 100%;
+    width: auto;
+    height: auto;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    background-color: rgba(16, 16, 16, 0.888);
+    overflow: hidden;
+    box-sizing: border-box;
+    transition: all .5s ease-in-out;
+    border-radius: 25px;
+    margin: 8px 10px;
+  }
+
+  .navbar .nav-menu a {
+    font-size: 15px;
+    width: max-content;
+    padding: 1px 10px;
+    color: #fff;
+  }
+
+  .navbar .nav-menu a:hover {
+    background-color: hsla(0, 0%, 100%, 0.721);
+    transition: 0.4s ease-out;
+    color: #1b1919;
+
+  }
+
+  .navbar :checked~.nav-menu {
+    bottom: 0;
+  }
+
+  .navbar .icon-burger {
+    display: block;
+  }
+
+  .navbar :checked~.icon-burger .line:nth-child(1) {
+    transform: translateY(10px) rotate(225deg);
+  }
+
+  .navbar :checked~.icon-burger .line:nth-child(3) {
+    transform: translateY(-10px) rotate(-225deg);
+  }
+
+  .navbar :checked~.icon-burger .line:nth-child(2) {
+    opacity: 0;
+  }
+
+}

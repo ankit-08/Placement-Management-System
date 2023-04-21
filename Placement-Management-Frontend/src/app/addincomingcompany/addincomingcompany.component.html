@@ -1,0 +1,110 @@
+<app-tponav></app-tponav>
+
+<body>
+    <div class="container">
+        <div class="title">Add Incoming Company</div>
+        <div class="backend_message">
+            <h3>{{Showmsg}}</h3>
+        </div>
+        <div class="content">
+            <form #userform="ngForm" (ngSubmit)="onSubmit(userform)">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Company ID</span>
+                        <input type="number" name="company_id" placeholder="Company ID" [(ngModel)]="incobj.company_id"
+                            required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Company Name</span>
+                        <input type="text" name="company_name" placeholder="Company Name"
+                            [(ngModel)]="incobj.company_name" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Company Address</span>
+                        <input type="text" name="company_address" placeholder="Company Address"
+                            [(ngModel)]="incobj.company_address" required>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">Job Location</span>
+                        <input type="text" name="Job_loaction" placeholder="Location" [(ngModel)]="incobj.Job_loaction"
+                            required>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">CTC</span>
+                        <input type="number" name="ctc" placeholder="CTC" [(ngModel)]="incobj.ctc" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Requirement</span>
+                        <input type="text" name="requirement" placeholder="Requirement" [(ngModel)]="incobj.requirement"
+                            required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Date</span>
+                        <input type="date" name="date" placeholder="Date" [(ngModel)]="incobj.date" required>
+                    </div>
+                </div>
+                <div class="department-details">
+                    <input type="checkbox" id="department-1" name="department" value="CSE">
+                    <input type="checkbox" id="department-2" name="department" value="IT">
+                    <input type="checkbox" id="department-3" name="department" value="ME">
+                    <input type="checkbox" id="department-4" name="department" value="CE">
+                    <input type="checkbox" id="department-5" name="department" value="EE">
+                    <input type="checkbox" id="department-6" name="department" value="EEE">
+                    <input type="checkbox" id="department-7" name="department" value="ET">
+                    <span class="department-title">Department</span>
+
+                    <div class="category">
+                        <label for="department-1">
+                            <span class="square one"></span>
+                            <span class="department">CSE</span>
+                        </label>
+                        <label for="department-2">
+                            <span class="square two"></span>
+                            <span class="department">IT</span>
+                        </label>
+                        <label for="department-3">
+                            <span class="square three"></span>
+                            <span class="department">ME</span>
+                        </label>
+                        <label for="department-4">
+                            <span class="square four"></span>
+                            <span class="department">CE</span>
+                        </label>
+                        <label for="department-5">
+                            <span class="square five"></span>
+                            <span class="department">EE</span>
+                        </label>
+                        <label for="department-6">
+                            <span class="square six"></span>
+                            <span class="department">EEE</span>
+                        </label>
+                        <label for="department-7">
+                            <span class="square seven"></span>
+                            <span class="department">ET</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="submit" id="button" value="ADD">
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+        <script>
+            const button= document.querySelector('#button');
+        button.addEventListener('click', (event) => {
+            let checkboxes= document.querySelectorAll('input[name="department"]:checked');
+
+     
+            let output= "";
+            checkboxes.forEach((checkbox) => {
+                output+=(checkbox.value)+",";
+            });
+            console.log("You have selected ", output);
+        });    
+        </script>
+</body>

@@ -1,0 +1,59 @@
+<app-tponav></app-tponav>
+
+<body>
+    <div class="container">
+        <div class="title">Add Placed Students</div>
+        <div class="backend_message">
+            <h3>{{Showmsg}}</h3>
+        </div>
+        <div class="content">
+            <form #userform="ngForm" (ngSubmit)="onSubmit(userform)">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Student Name</span>
+                        <input type="text" name="student_name" placeholder="Student Name"
+                            [(ngModel)]="dataobj.student_name" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Registarion Number</span>
+                        <input type="number" name="registration_number" placeholder="Registarion Number"
+                            [(ngModel)]="dataobj.registration_number" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Department</span>
+                        <select name="department" [(ngModel)]="dataobj.department">
+                            <option value="" disabled selected>Please select your department</option>
+                            <option value="CSE">CSE</option>
+                            <option value="IT">IT</option>
+                            <option value="ME">ME</option>
+                            <option value="CE">CE</option>
+                            <option value="EE">EE</option>
+                            <option value="EEE">EEE</option>
+                            <option value="ET">ET</option>
+                        </select>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Company Id</span>
+                        <input type="number" name="company_id" placeholder="Company Id" [(ngModel)]="dataobj.company_id"
+                            required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Company Name</span>
+                        <input type="text" name="company_name" placeholder="Company Name"
+                            [(ngModel)]="dataobj.company_name" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Academic Year</span>
+                        <input type="text" name="academic_year" placeholder="Ex: 2022-23"
+                            [(ngModel)]="dataobj.academic_year" required>
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="submit" value="SUBMIT">
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</body>

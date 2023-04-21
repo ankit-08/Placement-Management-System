@@ -1,0 +1,64 @@
+<app-tponav></app-tponav>
+
+<body>
+    <div class="container">
+        <div class="title">SEARCH STUDENT</div>
+        <div class="backend_message">
+            <h3>{{showmsg}}</h3>
+        </div>
+        <div class="content">
+            <form #userform="ngForm" (ngSubmit)="onSubmit(userform)">
+                <br>
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Email</span>
+                        <input type="email" name="email" placeholder="Enter email of the student"
+                            [(ngModel)]="stdobj.email" required>
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="submit" value="SEARCH">
+                </div>
+            </form>
+            <!-- table -->
+        </div>
+        <div class="table" *ngIf="showtable">
+            <table border="1" id="student-details">
+                <thead>
+                    <tr>
+                        <th>FIRST NAME</th>
+                        <th>LAST NAME</th>
+                        <th>FATHER'S NAME</th>
+                        <th>MOTHER'S NAME</th>
+                        <th>GENDER</th>
+                        <th>EMAIL</th>
+                        <th>ADDRESS</th>
+                        <th>PHONE NO.</th>
+                        <th>REGD. NO.</th>
+                        <th>ROLL NO.</th>
+                        <th>DEPARTMENT</th>
+                        <th>PASSWORD</th>
+    
+                    </tr>
+                </thead>
+    
+                <tr *ngFor="let stdobj of studentrecordsarr">
+                    <td>{{stdobj.first_name}}</td>
+                    <td>{{stdobj.last_name}}</td>
+                    <td>{{stdobj.father_name}}</td>
+                    <td>{{stdobj.mother_name}}</td>
+                    <td>{{stdobj.gender}}</td>
+                    <td>{{stdobj.email}}</td>
+                    <td>{{stdobj.address}}</td>
+                    <td>{{stdobj.mobile_number}}</td>
+                    <td>{{stdobj.registration_number}}</td>
+                    <td>{{stdobj.roll_number}}</td>
+                    <td>{{stdobj.department}}</td>
+                    <td>{{stdobj.password}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    
+</body>

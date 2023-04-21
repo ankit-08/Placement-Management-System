@@ -1,0 +1,31 @@
+<app-nav></app-nav>
+<body>
+    
+    <div class="container">
+        <div class="title">Login</div>
+        <div class="content">
+            <form #userform="ngForm" (ngSubmit)="onSubmit(userform)">
+                <div class="user-details">
+
+                    <div class="input-box">
+                        <span class="details">Email</span>
+                        <input type="email" name="email" placeholder="Enter your email" [(ngModel)]="stdobj.email"
+                            required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Password</span>
+                        <input type="password" name="password" placeholder="Enter your password"
+                            [(ngModel)]="stdobj.password" required>
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="submit" value="Login">
+                </div>
+                <div class="backend_message">
+                    <h3>{{Showmsg}}</h3>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>

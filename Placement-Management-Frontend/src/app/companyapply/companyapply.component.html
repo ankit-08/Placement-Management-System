@@ -1,0 +1,62 @@
+<app-studentnav></app-studentnav>
+
+<body>
+    <div class="container">
+        <div class="title">APPLY COMPANY</div>
+        <div class="backend_message">
+            <h3>{{Showmsg}}</h3>
+        </div>
+        <div class="content">
+            <form #userform="ngForm" (ngSubmit)="onSubmit(userform)">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Student's name</span>
+                        <input type="text" name="name" placeholder="Enter your name" [(ngModel)]="dataobj.name"
+                            required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Registration Number</span>
+                        <input type="text" name="registration_number" placeholder="Enter Registration Number"
+                            [(ngModel)]="dataobj.registration_number" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Department</span>
+                        <select name="department" [(ngModel)]="dataobj.department">
+                            <option value="" disabled selected>Please select your department</option>
+                            <option value="CSE">CSE</option>
+                            <option value="IT">IT</option>
+                            <option value="ME">ME</option>
+                            <option value="CE">CE</option>
+                            <option value="EE">EE</option>
+                            <option value="EEE">EEE</option>
+                            <option value="ET">ET</option>
+                        </select>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Email</span>
+                        <input type="email" name="email" placeholder="Enter your email" [(ngModel)]="dataobj.email"
+                            required>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">Company id</span>
+                        <input type="number" name="company_id" placeholder="Enter company id"
+                            [(ngModel)]="dataobj.company_id" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Company name</span>
+                        <input type="text" name="company_name" placeholder="Enter company name"
+                            [(ngModel)]="dataobj.company_name" required>
+                    </div>
+                    
+                </div>
+
+                <div class="button">
+                    <input type="submit" value="Apply">
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</body>
